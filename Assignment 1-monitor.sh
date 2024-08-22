@@ -15,9 +15,9 @@ function show_network_stats() {
   echo "Concurrent Connections:"
   ss -tun | wc -l
   echo "Packet Drops:"
-  netstat -s | grep "segments retransmited"
+  ss -s | grep "retransmit"
   echo "Network Traffic (MB In/Out):"
-  ifconfig eth0 | awk '/RX packets/{print $5/1024/1024 " MB In"} /TX packets/{print $5/1024/1024 " MB Out"}'
+  ip -s link | awk '/RX:/ {print "RX: " $2/1024/1024 " MB"} /TX:/ {print "TX: " $2/1024/1024 " MB"}'
 }
 
 # Function to display disk usage
