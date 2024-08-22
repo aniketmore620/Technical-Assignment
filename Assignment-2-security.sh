@@ -3,7 +3,6 @@
 
 #### **Script: `security_audit.sh`**
 
-```bash
 #!/bin/bash
 
 # Function for User and Group Audits
