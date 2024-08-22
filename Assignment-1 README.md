@@ -18,3 +18,5 @@ You can run the script to monitor the entire system or specific sections.
 ### Run the script:
 ```bash
 ./monitor.sh
+./monitor.sh -cpu -memory -network
+
